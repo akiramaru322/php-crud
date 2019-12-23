@@ -1,7 +1,7 @@
 <?php
     session_start();
     if (isset($_SESSION['usuario']))
-        header("location: /view/");
+        header("location: /view/inicio.php");
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -55,7 +55,7 @@
             .then(respuesta => respuesta.json())
             .then(respuesta => {
                 respuesta.msg === 'bienvenido'
-                    ? window.location.href = "/view/"
+                    ? window.location.href = "/view/inicio.php"
                     : mostrarError(respuesta.msg)
             })
             .catch(error =>{
